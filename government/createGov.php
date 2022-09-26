@@ -1,7 +1,9 @@
 <?php 
 $title = "Add Government";
 include "../general/env.php";
+include "../general/functions.php";
 include "../layout/header.php";
+include '../layout/nav.php';
 if(isset($_POST['submit'])){
     $name = $_POST['name'];
     $create =  "INSERT INTO `government` Values (null,'$name')";

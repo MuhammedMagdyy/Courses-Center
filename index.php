@@ -1,3 +1,10 @@
+<?php
+$title = "Home";
+include './general/env.php';
+include './general/functions.php';
+include './layout/header.php';
+include './layout/nav.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,3 +17,7 @@
     
 </body>
 </html>
+
+<?php
+include './layout/footer.php';
+?>
