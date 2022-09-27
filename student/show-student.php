@@ -4,6 +4,8 @@ include '../general/env.php';
 include '../general/functions.php';
 include '../layout/header.php';
 include '../layout/nav.php';
+include '../auth/nologin.php';
+
 
 if (isset($_GET['deleteId'])) {
     $id = $_GET['deleteId'];

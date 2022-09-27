@@ -4,14 +4,13 @@ include "../general/env.php";
 include "../general/functions.php";
 include "../layout/header.php";
 include '../layout/nav.php';
-// include '../auth/loginadmin.php';
+include '../auth/nologin.php';
 
 if(isset($_POST['submit'])){
     $name = $_POST['name'];
     $create =  "INSERT INTO `government` Values (null,'$name')";
     $query = mysqli_query($connect,$create);
     if($query){
-        $_SESSION['createsuc']="<div class = 'alert alert-success'> Updated Successfully</div>";
         header("location:ShowGov.php");
 
 

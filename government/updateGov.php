@@ -2,6 +2,9 @@
 $title = "Update Government";
 include "../general/env.php";
 include "../layout/header.php";
+include '../auth/nologin.php';
+
+
 $id = "";
 
 if(isset($_GET['edit'])){
@@ -21,7 +24,6 @@ if(isset($_POST['submit'])){
     // echo $update;
     $query = mysqli_query($connect,$update);
     if($query){
-        $_SESSION['editsuc']="<div class = 'alert alert-success'> Updated Successfully</div>";
         header("location:ShowGov.php");
 
     }else{
@@ -34,8 +36,7 @@ if(isset($_GET['delete'])){
     // echo $update;
     $query = mysqli_query($connect,$delete);
     if($query){
-        $_SESSION['deletesuc']="<div class = 'alert alert-success'> Deleted Successfully</div>";
-        header("location:ShowGov.php");
+     header("location:ShowGov.php");
 
     }else{
         $error ="<div class = 'alert alert-danger'> Some Thing Wrong</div>";

@@ -4,6 +4,8 @@ include '../general/functions.php';
 $title = "List of Courses";
 include '../layout/header.php';
 include '../layout/nav.php';
+include '../auth/nologin.php';
+
 
 ?>
     <div class = "container my-5">
