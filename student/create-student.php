@@ -28,7 +28,6 @@ if (isset($_POST['add'])) {
         die("ERROR: Could not connect. " . mysqli_connect_error());
     }
 }
-
 ?>
 
 <h2 class="text-center my-5">Students</h2>

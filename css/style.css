@@ -1,0 +1,43 @@
+body {
+    min-height: 100vh;
+    margin: 0;
+    position: relative;
+}
+
+header {
+    min-height: 50px;
+    background: lightcyan;
+}
+
+footer {
+    background: #fff;;
+}
+
+/* Trick: */
+body {
+    position: relative;
+}
+
+body::after {
+    content: '';
+    display: block;
+    height: 50px;
+    /* Set same as footer's height */
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+}
+
+.text-dark {
+    text-decoration: none !important;
+    cursor: text;
+}
+
+.navbar-brand {
+    font-weight: bold;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}

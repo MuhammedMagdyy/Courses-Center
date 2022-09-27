@@ -45,9 +45,9 @@ $check = mysqli_query($connect, $select);
                     <td>' . $data['email'] . '</td>
                     <td>' . $data['phone'] . '</td>
                     <td>
-                    <button class="btn btn-info"><a href="/G4-Tasks/student/update-student.php?updateId=' . $data['id'] . '"
+                    <button class="btn btn-info"><a href="/Courses-Center/student/update-student.php?updateId=' . $data['id'] . '"
                     class="text-light">Edit</a></button>
-                    <button class="btn btn-danger"><a href="/G4-Tasks/student/show-student.php?deleteId=' . $data['id'] . '"
+                    <button class="btn btn-danger"><a href="/Courses-Center/student/show-student.php?deleteId=' . $data['id'] . '"
                     class="text-light">Remove</a></button>
                     </td>
                     </tr>';
