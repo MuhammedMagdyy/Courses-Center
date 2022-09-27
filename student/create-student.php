@@ -5,17 +5,25 @@ include '../general/functions.php';
 include '../layout/header.php';
 include '../layout/nav.php';
 
+$course = "SELECT * from `course`";
+$course_check = mysqli_query($connect, $course);
+
+$gov = "SELECT * from `government`";
+$gov_check = mysqli_query($connect, $gov);
+
 if (isset($_POST['add'])) {
     $name = $_POST['studentName'];
     $email = $_POST['studentEmail'];
     $phone = $_POST['studentPhone'];
+    $courseId = $_POST['courseId'];
+    $govId = $_POST['goveId'];
 
-    $insert = "INSERT INTO `student` values(null, '$name', '$email', '$phone')";
+    $insert = "INSERT INTO `student` values(null, '$name', '$email', '$phone', $courseId, $govId)";
     $query = mysqli_query($connect, $insert);
     if ($query) {
         path('student/create-student.php');
     } else {
-    die("ERROR: Could not connect. " . mysqli_connect_error());
+        die("ERROR: Could not connect. " . mysqli_connect_error());
     }
 }
 
@@ -37,7 +45,23 @@ if (isset($_POST['add'])) {
                 <label for="studentPhone">Phone</label>
                 <input type="text" class="form-control" autocomplete="off" id="studentPhone" name="studentPhone" required autofocus />
             </div>
-            <button type="submit" name="add" class="btn btn-primary mt-1">Add</button>
+            <div class="form-group">
+                <label for="">Course</label>
+                <select class="form-control" name="courseId" id="">
+                    <option>Select Course</option>
+                    <?php foreach ($course_check as $data) : ?>
+                        <option value=" <?= $data['id'] ?> "> <?= $data['name'] ?></option>
+                    <?php endforeach; ?>
+                </select>
+            </div>
+            <label for="">Government</label>
+            <select class="form-control" name="goveId" id="">
+                <option>Select Government</option>
+                <?php foreach ($gov_check as $data) : ?>
+                    <option value=" <?= $data['id'] ?> "> <?= $data['name'] ?></option>
+                <?php endforeach; ?>
+            </select>
+            <button type="submit" name="add" class="btn btn-primary mt-1 my-4">Add</button>
         </fieldset>
     </form>
 </div>

@@ -5,6 +5,12 @@ include '../general/functions.php';
 include '../layout/header.php';
 include '../layout/nav.php';
 
+$course = "SELECT * from `course`";
+$course_check = mysqli_query($connect, $course);
+
+$gov = "SELECT * from `government`";
+$gov_check = mysqli_query($connect, $gov);
+
 if (isset($_GET['updateId'])) {
     $id = $_GET['updateId'];
     $select = "SELECT * FROM `student` WHERE id=$id";
@@ -19,8 +25,10 @@ if (isset($_POST['update'])) {
     $name = $_POST['studentName'];
     $email = $_POST['studentEmail'];
     $phone = $_POST['studentPhone'];
+    $courseId = $_POST['courseId'];
+    $govId = $_POST['goveId'];
 
-    $update = "UPDATE `student` SET `id`=$id, `name`='$name', `email`='$email', `phone`='$phone' WHERE id=$id";
+    $update = "UPDATE `student` SET `id`=$id, `name`='$name', `email`='$email', `phone`='$phone', `courseId`=$courseId, `governemtId`=$govId WHERE id=$id";
     $query = mysqli_query($connect, $update);
     if ($query) {
         path('student/show-student.php');
@@ -37,17 +45,31 @@ if (isset($_POST['update'])) {
         <fieldset class="border p-4">
             <div class="form-group">
                 <label for="studentName">Name</label>
-                <input type="text" class="form-control" value="<?=$stuName?>" autocomplete="off" id="studentName" name="studentName" />
+                <input type="text" class="form-control" value="<?= $stuName ?>" autocomplete="off" id="studentName" name="studentName" />
             </div>
             <div class="form-group">
                 <label for="studentEmail">Email</label>
-                <input type="email" class="form-control" value="<?=$stuEmail?>" autocomplete="off" id="studentEmail" name="studentEmail" />
+                <input type="email" class="form-control" value="<?= $stuEmail ?>" autocomplete="off" id="studentEmail" name="studentEmail" />
             </div>
             <div class="form-group">
                 <label for="studentPhone">Phone</label>
-                <input type="text" class="form-control" value="<?=$stuPhone?>" autocomplete="off" id="studentPhone" name="studentPhone" />
+                <input type="text" class="form-control" value="<?= $stuPhone ?>" autocomplete="off" id="studentPhone" name="studentPhone" />
             </div>
-            <button type="submit" name="update" class="btn btn-primary mt-1">Update</button>
+            <div class="form-group">
+                <label for="">Course</label>
+                <select class="form-control" name="courseId" id="">
+                    <?php foreach ($course_check as $data) : ?>
+                        <option value=" <?= $data['id'] ?> "> <?= $data['name'] ?></option>
+                    <?php endforeach; ?>
+                </select>
+            </div>
+            <label for="">Government</label>
+            <select class="form-control" name="goveId" id="">
+                <?php foreach ($gov_check as $data) : ?>
+                    <option value=" <?= $data['id'] ?> "> <?= $data['name'] ?></option>
+                <?php endforeach; ?>
+            </select>
+            <button type="submit" name="update" class="btn btn-primary mt-1 my-3">Update</button>
         </fieldset>
     </form>
 </div>
