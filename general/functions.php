@@ -2,7 +2,7 @@
 function path($go)
 {
     echo "<script>
-            location.replace('/G4-Tasks/$go')
+            location.replace('/Courses-Center/$go')
             </script>";
 }
 function testMessage($connect, $message)

@@ -1,4 +1,4 @@
-<?php 
+<?php
 $title = "Add Government";
 include "../general/env.php";
 include "../general/functions.php";
@@ -6,23 +6,21 @@ include "../layout/header.php";
 include '../layout/nav.php';
 include '../auth/nologin.php';
 
-if(isset($_POST['submit'])){
+if (isset($_POST['submit'])) {
     $name = $_POST['name'];
     $create =  "INSERT INTO `government` Values (null,'$name')";
-    $query = mysqli_query($connect,$create);
-    if($query){
+    $query = mysqli_query($connect, $create);
+    if ($query) {
         header("location:ShowGov.php");
-
-
-    }else{
-        $error ="<div class = 'alert alert-danger'> Some Thing Wrong</div>";
+    } else {
+        $error = "<div class = 'alert alert-danger'> Some Thing Wrong</div>";
     }
 }
 ?>
 <div class="container">
     <div class="row">
         <div class="offset-3 col-6 mt-5 text-center h1 text-primary">
-            <?= $title?>
+            <?= $title ?>
         </div>
         <div class="offset-4 col-4 mt-5">
             <form method="post">

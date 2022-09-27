@@ -10,6 +10,7 @@ include 'auth/nologin.php';
 $select = "SELECT * From `studentdata`";
 $query = mysqli_query($connect, $select);
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
