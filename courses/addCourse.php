@@ -1,7 +1,7 @@
 <?php
 include '../general/env.php';
 include '../general/functions.php';
-$title = "add course";
+$title = "Add Course";
 include '../layout/header.php';
 include '../layout/nav.php';
 include '../auth/nologin.php';
