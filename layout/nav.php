@@ -38,7 +38,7 @@
                     </div>
                 </li>
             </ul>
-            <a href="../Courses-Center/logout.php" class="btn btn-danger">Logout</a>
+            <a href="../logout.php" class="btn btn-danger">Logout</a>
         </div>
     <?php } ?>
 
