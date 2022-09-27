@@ -2,6 +2,7 @@
 $title = "Login";
 include "../general/env.php";
 include "../layout/header.php";
+include "../layout/nav.php";
 if (isset($_POST['submit'])) {
     $email = $_POST['email'];
     $password = $_POST['password'];

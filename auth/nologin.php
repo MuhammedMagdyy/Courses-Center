@@ -1,5 +1,6 @@
+
 <?php
-if(isset($_SESSION['admin'])){
-    header("location:../admin/");
+if(!isset($_SESSION['admin'])){
+    header("location:../admin/login.php");
 }
 ?>
