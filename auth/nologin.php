@@ -1,5 +1,5 @@
 <?php
 if(empty($_SESSION['admin'])){
-    header("location:../admin/login.php");
+    header("location:/G4-Tasks/admin/login.php");
 }
 ?>
