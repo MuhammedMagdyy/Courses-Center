@@ -3,6 +3,7 @@
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
+    <?php if (!empty($_SESSION['admin'])){ ?>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
@@ -37,5 +38,8 @@
                 </div>
             </li>
         </ul>
+       <a href="../logout.php" class="btn btn-danger">Logout</a>
     </div>
+    <?php }?>
+
 </nav>

@@ -4,6 +4,8 @@ include '../general/functions.php';
 $title = "add course";
 include '../layout/header.php';
 include '../layout/nav.php';
+include '../auth/nologin.php';
+
 if(isset($_POST['click'])) {
     $courseName = $_POST['name'];
     $query = "INSERT INTO `course` VALUES('null', '$courseName')";

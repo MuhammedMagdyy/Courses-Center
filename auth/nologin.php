@@ -1,6 +1,5 @@
-
 <?php
-if(!isset($_SESSION['admin'])){
+if(empty($_SESSION['admin'])){
     header("location:../admin/login.php");
 }
 ?>

@@ -5,6 +5,9 @@ $title = "update Course";
 include '../layout/header.php';
 include '../layout/nav.php';
 
+include '../auth/nologin.php';
+
+
 if (isset($_POST['submit'])) {
     $id = $_GET['updateid'];
     $name = $_POST['name'];

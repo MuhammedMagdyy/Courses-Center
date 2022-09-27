@@ -3,6 +3,8 @@ $title = "Login";
 include "../general/env.php";
 include "../layout/header.php";
 include "../layout/nav.php";
+include "../auth/loginadmin.php";
+// print_r($_SESSION);
 if (isset($_POST['submit'])) {
     $email = $_POST['email'];
     $password = $_POST['password'];
@@ -11,9 +13,9 @@ if (isset($_POST['submit'])) {
     $row= mysqli_fetch_assoc($query);
     if ($query) {
         $_SESSION['admin']= $row;
-        // print_r($_SESSION['admin']);
+        header("location:../index.php");
     } else {
-        die("ERROR: Could not connect. " . mysqli_connect_error());
+       header("location:./login.php");
     }
 }
 ?>
