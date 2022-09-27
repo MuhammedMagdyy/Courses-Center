@@ -38,7 +38,7 @@
                     </div>
                 </li>
             </ul>
-    <a href="" class="btn btn-danger" onclick="window.open('http://localhost/Courses-center/logout.php')">Logout</a>
+    <button class="btn btn-danger" onclick="window.open('http://localhost/Courses-center/logout.php','_parent')">Logout</button>
         </div>
     <?php } ?>
 
