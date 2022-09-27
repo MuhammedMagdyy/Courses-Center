@@ -1,12 +1,10 @@
 <?php
+$title = "update Course";
 include '../general/env.php';
 include '../general/functions.php';
-$title = "update Course";
 include '../layout/header.php';
 include '../layout/nav.php';
-
 include '../auth/nologin.php';
-
 
 if (isset($_POST['submit'])) {
     $id = $_GET['updateid'];
